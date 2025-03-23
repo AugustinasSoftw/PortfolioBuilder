@@ -5,7 +5,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const response = await fetch("http://localhost:5000/api/users", {
+    const response = await fetch("https://portfoliobuilder-ln25.onrender.com/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" }, // Important!
         body: JSON.stringify({ username, email, password })
