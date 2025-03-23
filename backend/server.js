@@ -16,7 +16,7 @@ app.use(cors({
 
 // Handle preflight requests (important for POST requests from browser)
 app.options("*", cors({
-  origin: "https://e-comm-h75a.vercel.app",
+  origin: "*",
   credentials: true,
 }));
 
