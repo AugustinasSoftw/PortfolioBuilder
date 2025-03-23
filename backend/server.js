@@ -3,31 +3,37 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
-// Load env vars
-dotenv.config();
+dotenv.config(); // ✅ Load env vars
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+const app = express(); // ✅ Must come before app.use()
 
-// ✅ Enable CORS — allow Vercel frontend
+// ✅ Enable CORS – allow Vercel frontend
 app.use(cors({
-  origin: "https://e-comm-h75a.vercel.app", // Your frontend domain
+  origin: "https://e-comm-h75a.vercel.app",
   credentials: true
 }));
 
-app.use(express.json());
+// ✅ Optional: allow preflight requests
+app.options("*", cors({
+  origin: "https://e-comm-h75a.vercel.app",
+  credentials: true
+}));
+
+app.use(express.json()); // ✅ Middleware for JSON requests
 
 // Routes
 const userRoutes = require("./src/routes/userRoutes");
 app.use("/api/users", userRoutes);
 
-// Connect DB and start server
+// DB + Server
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
+  useUnifiedTopology: true
+})
+.then(() => {
   console.log("✅ MongoDB Connected");
-  app.listen(PORT, () => {
-    console.log(`✅ Server running on port ${PORT}`);
-  });
-}).catch(err => console.error("❌ MongoDB Connection Error:", err));
+  app.listen(process.env.PORT || 5000, () =>
+    console.log(`✅ Server running on port ${process.env.PORT || 5000}`)
+  );
+})
+.catch(err => console.error("❌ MongoDB Connection Error:", err));
