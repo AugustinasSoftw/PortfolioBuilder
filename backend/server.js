@@ -8,17 +8,18 @@ dotenv.config(); // ✅ Load env vars
 const app = express(); // ✅ Must come before app.use()
 
 // Enable CORS for Vercel frontend  
+// Enable CORS for Vercel frontend
 app.use(cors({
-  origin: "*", // your Vercel domain
+  origin: "https://e-comm-h75a.vercel.app", // your Vercel domain
   credentials: true,
-  methods: ['GET', 'POST', 'DELETE', ]
 }));
 
 // Handle preflight requests (important for POST requests from browser)
 app.options("*", cors({
-  origin: "*",
+  origin: "https://e-comm-h75a.vercel.app",
   credentials: true,
 }));
+
 
 
 app.use(express.json()); // ✅ Middleware for JSON requests
