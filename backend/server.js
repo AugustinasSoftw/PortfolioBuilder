@@ -10,13 +10,7 @@ const app = express(); // ✅ Must come before app.use()
 // Enable CORS for Vercel frontend  
 // Enable CORS for Vercel frontend
 app.use(cors({
-  origin: "https://e-comm-h75a.vercel.app", // your Vercel domain
-  credentials: true,
-}));
-
-// Handle preflight requests (important for POST requests from browser)
-app.options("*", cors({
-  origin: "https://e-comm-h75a.vercel.app",
+  origin: "*", // your Vercel domain
   credentials: true,
 }));
 
