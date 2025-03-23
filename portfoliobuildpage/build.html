@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Builder</title>
+    <link rel="stylesheet" href="build.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html">← Back to Home</a>
+    </header>
+
+    <div class="builder-container">
+        <h2>Build Your Portfolio</h2>
+
+        <form id="portfolio-form">
+            <!-- Personal Details -->
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" placeholder="Enter your name" required>
+
+            <label for="contact">Contact Information:</label>
+            <input type="text" id="contact" placeholder="Enter your phone/email" required>
+
+            <label for="linkedin">LinkedIn (optional):</label>
+            <input type="text" id="linkedin" placeholder="LinkedIn URL">
+
+            <!-- Education Section -->
+            <h3>Education</h3>
+            <div id="education-section">
+                <div class="education-entry">
+                    <input type="text" placeholder="Institution Name" class="institution">
+                    <input type="text" placeholder="Degree" class="degree">
+                    <input type="text" placeholder="Year of Graduation" class="grad-year">
+                </div>
+            </div>
+            <button type="button" onclick="addEducation()">+ Add More Education</button>
+
+            <!-- Work Experience Section -->
+            <h3>Work Experience</h3>
+            <div id="experience-section">
+                <div class="experience-entry">
+                    <input type="text" placeholder="Job Title" class="job-title">
+                    <input type="text" placeholder="Company Name" class="company">
+                    <input type="text" placeholder="Duration" class="duration">
+                    <textarea placeholder="Job Description" class="job-description"></textarea>
+                </div>
+            </div>
+            <button type="button" onclick="addExperience()">+ Add More Experience</button>
+
+            <!-- Skills Section -->
+            <h3>Skills</h3>
+            <div id="skills-section">
+                <input type="text" placeholder="Skill" class="skill">
+            </div>
+            <button type="button" onclick="addSkill()">+ Add More Skills</button>
+
+            <button type="submit">Generate Portfolio</button>
+        </form>
+
+        <!-- Resume Preview Section -->
+        <div id="portfolio-preview" class="portfolio-preview"></div>
+        <button id="download-pdf">Download as PDF</button>
+    </div>
+
+    <script src="build.js"></script>
+</body>
+</html>

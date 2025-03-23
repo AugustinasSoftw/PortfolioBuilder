@@ -1,0 +1,51 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+/* Form Container */
+.builder-container {
+    background: white;
+    width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+}
+
+/* Input Fields */
+input, textarea {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkblue;
+}
+
+/* Resume Preview */
+.portfolio-preview {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: left;
+}

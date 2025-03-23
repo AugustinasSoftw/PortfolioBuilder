@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>CV builder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" , content="width=device-width initial-scale=1.0, user-scalable=yes" >
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo-container">
+            <img src="images/logo2.png" class="logo">
+        </div>
+
+        <div class="auth-buttons">
+            <a href="login/login.html"><button class="login-btn" id="login">Login</button></a>
+            <a href="portfoliobuildpage/build.html"><button class="build" id="build-CV">Build Resume</button></a>
+        </div>
+
+        
+    </header>
+
+    <main>
+
+        <div class="color-1">
+        <section class="section1">
+
+            <div class="cut1">
+            <h1>Resume Builder</h1>
+            <p>Create simple, but proffesional resume with easy to use UI.</p>   
+            <a href="portfoliobuildpage/build.html"><button id="build-CV" class="build">Build Now</button></a>  
+            </div>
+
+            <div class="cut2">
+                <img src="images\Example.png">
+            </div>
+
+        </section>
+        </div>
+
+        <section class="section2">
+
+            <div class="cut3">
+                 
+                
+                <img src="images\happyguy.jpg">
+
+                </div>
+    
+                <div class="cut4">
+                    <h2>Effortless Resume Building</h2>
+                <p>Create a polished resume in minutes with our intuitive interface. No software installation required—edit your CV anytime, anywhere. Save your progress automatically, even offline, ensuring your data is always secure. Take advantage of powerful formatting options, real-time previews, and a sleek, professional design that makes job applications effortless!</p>  
+                </div>
+    
+
+        </section>
+
+
+    </main>
+
+    <footer>
+
+        <div class="social-media">
+            <p>Connect with me via:</p>
+            <div class="social-icons">
+                <a target="_blank" href="https://www.linkedin.com/in/augustinas-licys-19a741202/" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                
+                <a target="_blank" href="https://www.facebook.com/augustinas.lici/" class="facebook"><i class="fab fa-facebook"></i></a>
+               
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Check if the user is logged in (stored in localStorage)
+            const user = JSON.parse(localStorage.getItem("user"));
+    
+            if (user) {
+                // ✅ Hide Login Button
+                document.getElementById("login").style.display = "none";
+    
+                // ✅ Create Logout Button Dynamically
+                const logoutButton = document.createElement("button");
+                logoutButton.innerText = "Logout";
+                logoutButton.id = "logout";
+                logoutButton.className = document.getElementById("login").className; // Copy login button class
+                logoutButton.style.marginLeft = "10px"; // Adjust spacing if needed
+    
+                // ✅ Insert Logout Button in the Same Place as Login
+                document.getElementById("login").parentNode.appendChild(logoutButton);
+    
+                // ✅ Logout Function
+                logoutButton.addEventListener("click", function () {
+                    localStorage.removeItem("user"); // Remove user session
+                    window.location.reload(); // Refresh page to reflect changes
+                });
+            }
+        });
+    </script>
+    
+    
+    
+</body>
+
+</html>
